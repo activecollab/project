@@ -1,0 +1,15 @@
+.DS_Store
+*.idea
+/app/settings.php
+/config/.env.development
+/config/.env.staging
+/config/.env.production
+/config/.env.narrative
+/log/*.log
+/vendor
+/node_modules
+/public/libraries.js
+/public/application.js
+/public/libraries.css
+/public/stylesheet.css
+/public/fonts/glyph*
