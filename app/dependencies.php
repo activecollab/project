@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Active Collab ID project.
+ * This file is part of the App project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -23,11 +23,11 @@ $container['app_root'] = function () {
 // app url
 $container['app_url'] = function ($c) {
   if (in_array($c['app_env'], ['development', 'narrative'])) {
-      if (empty($c['settings']['app_url'])) {
-          return 'http://' . $_SERVER['HTTP_HOST'];
-      } else {
+      if (!empty($c['settings']['app_url'])) {
           return $c['settings']['app_url'];
       }
+
+      return 'http://' . $_SERVER['HTTP_HOST'];
   } elseif ($c['app_env'] == 'staging') {
       return 'https://app-staging.activecollab.com';
   } elseif ($c['app_env'] == 'production') {

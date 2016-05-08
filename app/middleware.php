@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Active Collab ID project.
+ * This file is part of the App project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -23,3 +23,4 @@ if (empty($container)) {
 
 // Add Etag interceptor (execute after authentication middlewares because we need authenticated user)
 // $app->add(new \ActiveCollab\Id\Middleware\Etag($container));
+
