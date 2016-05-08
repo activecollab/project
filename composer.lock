@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "84d7b75197f8d052f3c65995a9697f43",
-    "content-hash": "9ba11cfcfdc74979e4a88bacc6feac31",
+    "hash": "db9bd6bc7793dfb4a8e8dbb5e32ee10f",
+    "content-hash": "cc8f8330282ad8ff4291e579fded1eed",
     "packages": [
         {
             "name": "activecollab/authentication",
@@ -63,11 +63,12 @@
             "source": {
                 "type": "git",
                 "url": "/Users/ilija/Projects/Components/Bootstrap",
-                "reference": "ae9be409fb28ceef03ef35fd776ad145f10f40e2"
+                "reference": "7715029fb939722e8a5e72bcc5e7e3c226e0dae1"
             },
             "require": {
                 "activecollab/authentication": "^1.0.0",
                 "activecollab/container": "^1.0.0",
+                "activecollab/controller": "^0.10.0",
                 "activecollab/databasemigrations": "^1.0.0",
                 "activecollab/databasestructure": "^0.10.0",
                 "graylog2/gelf-php": "~1.4.0",
@@ -94,7 +95,7 @@
                 }
             },
             "description": "All packages and code that is needed to glue them together for a typical PHP project",
-            "time": "2016-05-08 21:37:32"
+            "time": "2016-05-08 22:41:01"
         },
         {
             "name": "activecollab/container",
@@ -175,6 +176,33 @@
                 "service-container"
             ],
             "time": "2016-04-26 15:18:08"
+        },
+        {
+            "name": "activecollab/controller",
+            "version": "0.10.0",
+            "source": {
+                "type": "git",
+                "url": "/Users/ilija/Projects/Components/Controller",
+                "reference": "d0a07c655b458e8d17fa3762acb02941306ea679"
+            },
+            "require": {
+                "activecollab/containeraccess": "^1.0.0",
+                "activecollab/etag": "^1.0.0",
+                "php": ">=5.6.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "^1.0",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ActiveCollab\\Controller\\": "src"
+                }
+            },
+            "description": "Convenient Slit3 controller and conventions",
+            "time": "2016-05-08 22:38:35"
         },
         {
             "name": "activecollab/cookies",

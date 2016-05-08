@@ -9,11 +9,12 @@
 namespace ActiveCollab\App\Controller;
 
 use ActiveCollab\App\ContainerAccess\ContainerAccessTrait;
+use ActiveCollab\Controller\Controller as BaseController;
 
 /**
  * @package ActiveCollab\App\Controller
  */
-abstract class Controller
+abstract class Controller extends BaseController
 {
     use ContainerAccessTrait;
 }

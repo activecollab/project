@@ -11,6 +11,10 @@
         {
             "type": "vcs",
             "url": "/Users/ilija/Projects/Components/Bootstrap"
+        },
+        {
+            "type": "vcs",
+            "url": "/Users/ilija/Projects/Components/Controller"
         }
     ],
     "require": {

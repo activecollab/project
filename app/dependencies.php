@@ -54,3 +54,24 @@ $container['app_url'] = function ($c) {
       throw new RuntimeException("Unknown environment '{$c['app_env']}'");
   }
 };
+
+$container['result_encoder'] = function() {
+    return new \ActiveCollab\Controller\ResultEncoder\ResultEncoder();
+};
+
+$collections_path = $container['app_root'] . '/app/src/Controller';
+$collections_path_len = strlen($collections_path);
+
+foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($collections_path), RecursiveIteratorIterator::SELF_FIRST) as $file) {
+    if ($file->isFile() && $file->getExtension() == 'php') {
+        $class_name = ('\\ActiveCollab\\App\\Controller\\' . implode('\\', explode('/', substr($file->getPath() . '/' . $file->getBasename('.php'), $collections_path_len + 1))));
+
+        if ((new ReflectionClass($class_name))->isAbstract()) {
+            continue;
+        }
+
+        $container[ltrim($class_name, '\\')] = function ($c) use ($class_name) {
+            return new $class_name($c, $c['result_encoder']);
+        };
+    }
+}
