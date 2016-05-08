@@ -7,9 +7,3 @@
 /config/.env.narrative
 /log/*.log
 /vendor
-/node_modules
-/public/libraries.js
-/public/application.js
-/public/libraries.css
-/public/stylesheet.css
-/public/fonts/glyph*
