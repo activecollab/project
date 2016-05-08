@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "60bd8b34fed474baba19936c0980e78f",
+    "hash": "84d7b75197f8d052f3c65995a9697f43",
     "content-hash": "9ba11cfcfdc74979e4a88bacc6feac31",
     "packages": [
         {
@@ -63,10 +63,11 @@
             "source": {
                 "type": "git",
                 "url": "/Users/ilija/Projects/Components/Bootstrap",
-                "reference": "309ea9837ec8ce58aa730e624a730c0c61f84409"
+                "reference": "b2a76b11b70ac31f3bb57e037cccada87b8f7e79"
             },
             "require": {
                 "activecollab/authentication": "^1.0.0",
+                "activecollab/container": "^1.0.0",
                 "activecollab/databasemigrations": "^1.0.0",
                 "activecollab/databasestructure": "^0.10.0",
                 "graylog2/gelf-php": "~1.4.0",
@@ -93,7 +94,40 @@
                 }
             },
             "description": "All packages and code that is needed to glue them together for a typical PHP project",
-            "time": "2016-05-08 19:41:56"
+            "time": "2016-05-08 20:56:48"
+        },
+        {
+            "name": "activecollab/container",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/activecollab/container.git",
+                "reference": "3e2a0c8d6863c489c03505031e3e25d3e039113c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/activecollab/container/zipball/3e2a0c8d6863c489c03505031e3e25d3e039113c",
+                "reference": "3e2a0c8d6863c489c03505031e3e25d3e039113c",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/container-interop": "^1.1",
+                "php": ">=5.6.0",
+                "pimple/pimple": "^3.0.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "^1.0",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ActiveCollab\\Container\\": "app/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Pimple 3 wrapper that implements Container Interop",
+            "time": "2016-05-08 20:54:25"
         },
         {
             "name": "activecollab/containeraccess",
