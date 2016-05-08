@@ -15,6 +15,24 @@ if (empty($container)) {
     throw new RuntimeException('DI container not found');
 }
 
+$container['app_identifier'] = function ($c) {
+    return "App v$c[app_version]";
+};
+
+$container['app_version'] = function ($c) {
+    return trim(file_get_contents($c['app_root'] . '/VERSION'));
+};
+
+$container['app_env'] = function () {
+    $env = getenv('APP_ENVIRONMENT');
+
+    if ($env && in_array($env, ['narrative', 'staging', 'production'])) {
+        return $env;
+    } else {
+        return 'development';
+    }
+};
+
 // app root
 $container['app_root'] = function () {
     return dirname(__DIR__);
