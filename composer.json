@@ -33,7 +33,8 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "cp './config/.env.example' './config/.env.development'"
+            "cp './config/.env.example' './config/.env.development'",
+            "git init"
         ]
     },
     "config": {
