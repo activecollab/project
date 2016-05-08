@@ -9,6 +9,8 @@
 namespace ActiveCollab\App\ContainerAccess;
 
 /**
+ * @property string $app_root
+ * @property string $app_url
  * @property \ActiveCollab\DatabaseObject\PoolInterface $pool
  *
  * @package ActiveCollab\App\ContainerAccess
