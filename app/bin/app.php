@@ -29,25 +29,33 @@ $container['settings'] = function () {
 };
 require_once dirname(__DIR__) . '/dependencies.php';
 
-$application_commands_path = dirname(__DIR__) . '/src/Command';
-$application_commands_path_len = strlen($application_commands_path);
+$dirs_to_scan = [
+    APP_PATH . '/vendor/activecollab/bootstrap/src/command' => '\ActiveCollab\Bootstrap\Command',
+    APP_PATH . '/app/src/Command' => '\ActiveCollab\App\Command',
+];
 
-if (is_dir($application_commands_path)) {
-    foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($application_commands_path), RecursiveIteratorIterator::SELF_FIRST) as $file) {
-        if ($file->isFile() && $file->getExtension() == 'php') {
-            require_once $file->getPathname();
+foreach ($dirs_to_scan as $application_commands_path => $application_commands_namespace) {
+    $application_commands_path_len = strlen($application_commands_path);
 
-            $class_name = ('\\ActiveCollab\\App\\Command\\' . implode('\\', explode('/', substr($file->getPath() . '/' . $file->getBasename('.php'), $application_commands_path_len + 1))));
+    if (is_dir($application_commands_path)) {
+        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($application_commands_path), RecursiveIteratorIterator::SELF_FIRST) as $file) {
+            if ($file->isFile() && $file->getExtension() == 'php') {
+                $class_name = ($application_commands_namespace . '\\' . implode('\\', explode('/', substr($file->getPath() . '/' . $file->getBasename('.php'), $application_commands_path_len + 1))));
 
-            if (!(new ReflectionClass($class_name))->isAbstract()) {
-                /** @var \Symfony\Component\Console\Command\Command|ContainerAccessInterface $command */
-                $command = new $class_name();
-
-                if ($command instanceof ContainerAccessInterface) {
-                    $command->setContainer($container);
+                if (!class_exists($class_name, false)) {
+                    require_once $file->getPathname();
                 }
 
-                $application->add($command);
+                if (!(new ReflectionClass($class_name))->isAbstract()) {
+                    /** @var \Symfony\Component\Console\Command\Command|ContainerAccessInterface $command */
+                    $command = new $class_name();
+
+                    if ($command instanceof ContainerAccessInterface) {
+                        $command->setContainer($container);
+                    }
+
+                    $application->add($command);
+                }
             }
         }
     }
