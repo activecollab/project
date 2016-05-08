@@ -33,7 +33,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "php -r \"copy('config/.env.example', 'config/.env.development');\""
+            "cp './config/.env.example' './config/.env.development'"
         ]
     },
     "config": {
