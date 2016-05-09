@@ -38,6 +38,7 @@
     "scripts": {
         "post-create-project-cmd": [
             "cp './config/.env.sample' './config/.env.development'",
+            "cp './app/settings.php.dist' './app/settings.php'",
             "[ -d ./app/src/Model/Migrations ] || mkdir ./app/src/Model/Migrations",
             "git init"
         ]

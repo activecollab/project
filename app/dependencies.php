@@ -163,7 +163,7 @@ $container['pool'] = function ($c) {
     }
 
     foreach ((new ClassFinder())->scanDirForClasses($c['app_root'] . '/app/src/Model/Producer', '\ActiveCollab\App\Model\Producer', true) as $class_name) {
-        $pool->registerProducerByClass(str_replace('\\Producer\\', '\\', $class_name), $class_name);;
+        $pool->registerProducerByClass(str_replace('\\Producer\\', '\\', $class_name), $class_name);
     }
 
     return $pool;
@@ -186,7 +186,7 @@ $container['migrations'] = function ($c) {
 // ---------------------------------------------------
 
 // Controller action result encoder
-$container['result_encoder'] = function() {
+$container['result_encoder'] = function () {
     return new \ActiveCollab\Controller\ResultEncoder\ResultEncoder();
 };
 
