@@ -138,6 +138,49 @@ $container['logger'] = function ($c) {
 //  DB Connection, Pool, Structure, Migrations, Models
 // ---------------------------------------------------
 
+$container['connection'] = function ($c) {
+    $db_host = getenv('APP_MYSQL_HOST');
+    $db_port = getenv('APP_MYSQL_PORT');
+    $db_user = getenv('APP_MYSQL_USER');
+    $db_pass = getenv('APP_MYSQL_PASS');
+    $db_name = getenv('APP_MYSQL_NAME');
+
+    return (new \ActiveCollab\DatabaseConnection\ConnectionFactory($c['logger']))->mysqli("$db_host:$db_port", $db_user, $db_pass, $db_name, 'utf8mb4');
+};
+
+$container['pool'] = function ($c) {
+    $pool = new \ActiveCollab\DatabaseObject\Pool($c['connection'], $c['log']);
+    $pool->setContainer($c);
+
+    $types_file = $c['app_root'] . '/app/src/Model/types.php';
+
+    if (is_file($types_file)) {
+        $types = require $c['app_root'] . '/app/src/Model/types.php';
+
+        foreach ($types as $type) {
+            $pool->registerType($type);
+        }
+    }
+
+    foreach ((new ClassFinder())->scanDirForClasses($c['app_root'] . '/app/src/Model/Producer', '\ActiveCollab\App\Model\Producer', true) as $class_name) {
+        $pool->registerProducerByClass(str_replace('\\Producer\\', '\\', $class_name), $class_name);;
+    }
+
+    return $pool;
+};
+
+$container['structure'] = function () {
+    return new \ActiveCollab\App\Model\Structure();
+};
+
+$container['migrations_finder'] = function ($c) {
+    return new \ActiveCollab\DatabaseMigrations\Finder\MigrationsInChangesetsFinder($c['logger'], '\ActiveCollab\Id\Model\Migrations', "$c[app_root]/app/src/Model/Migrations");
+};
+
+$container['migrations'] = function ($c) {
+    return new \ActiveCollab\DatabaseMigrations\Migrations($c['connection'], $c['migrations_finder'], $c['logger']);
+};
+
 // ---------------------------------------------------
 //  Controllers
 // ---------------------------------------------------
