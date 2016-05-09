@@ -1,10 +1,7 @@
 .DS_Store
 *.idea
 /app/settings.php
-/config/.env
-/config/.env.development
-/config/.env.staging
-/config/.env.production
-/config/.env.narrative
+/config/.env*
+!/config/.env.samle
 /log/*.log
 /vendor
