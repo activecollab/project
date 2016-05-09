@@ -63,7 +63,7 @@
             "source": {
                 "type": "git",
                 "url": "/Users/ilija/Projects/Components/Bootstrap",
-                "reference": "0844edd68d58cad924def6709eb6bd332ee02dc3"
+                "reference": "4af4e65ec8e8462c4fcf8a10343d5be5e62ca408"
             },
             "require": {
                 "activecollab/authentication": "^1.0.0",
@@ -95,7 +95,7 @@
                 }
             },
             "description": "All packages and code that is needed to glue them together for a typical PHP project",
-            "time": "2016-05-09 08:14:43"
+            "time": "2016-05-09 08:35:31"
         },
         {
             "name": "activecollab/container",

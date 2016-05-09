@@ -30,7 +30,7 @@ $container['settings'] = function () {
 };
 require_once dirname(__DIR__) . '/dependencies.php';
 
-(new ClassFinder())->scanDirs([
+(new ClassFinder())->scanDirsForInstances([
     APP_PATH . '/vendor/activecollab/bootstrap/src/command' => '\ActiveCollab\Bootstrap\Command',
     APP_PATH . '/app/src/Command' => '\ActiveCollab\App\Command',
 ], function(\Symfony\Component\Console\Command\Command $command) use (&$application, &$container) {
