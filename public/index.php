@@ -21,9 +21,9 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App(require __DIR__ . '/../app/settings.php');
 $container = $app->getContainer();
 
+require __DIR__ . '/../app/config.php';
 require __DIR__ . '/../app/dependencies.php';
 require __DIR__ . '/../app/middleware.php';
 require __DIR__ . '/../app/routes.php';
 
 $app->run();
-

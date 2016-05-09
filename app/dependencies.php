@@ -12,6 +12,10 @@ if (empty($container)) {
     throw new RuntimeException('DI container not found');
 }
 
+// ---------------------------------------------------
+//  Application
+// ---------------------------------------------------
+
 $container['app_identifier'] = function ($c) {
     return "App v$c[app_version]";
 };
@@ -51,6 +55,92 @@ $container['app_url'] = function ($c) {
       throw new RuntimeException("Unknown environment '{$c['app_env']}'");
   }
 };
+
+// ---------------------------------------------------
+//  Logger
+// ---------------------------------------------------
+
+$container['logger'] = function ($c) {
+    $app_identifier = strtolower(explode(' ', $c['app_identifier'])[0]);
+
+    $log = new \Monolog\Logger($app_identifier);
+    $log_level = \Monolog\Logger::DEBUG;
+
+    $formatter = new \Monolog\Formatter\LineFormatter("[%datetime%] %level_name%: %message% %context% %extra%\n", 'Y-m-d H:i:s');
+
+    $log_handler = getenv('APP_LOG_HANDLER');
+
+    switch ($log_handler) {
+        case 'file':
+            $log_dir = getenv('APP_LOG_DIR');
+
+            if (empty($log_dir)) {
+                throw new RuntimeException('APP_LOG_DIR is required for file log handler');
+            }
+
+            if (substr($log_dir, 0, 1) == '.') {
+                $config_path = dirname(__DIR__) . '/config';
+                $old_working_dir = getcwd();
+
+                if ($old_working_dir != $config_path) {
+                    chdir($config_path);
+                }
+
+                $log_dir = realpath($log_dir);
+
+                if ($old_working_dir != $config_path) {
+                    chdir($old_working_dir);
+                }
+            }
+
+            $log_dir = rtrim($log_dir, '/');
+
+            if (!is_writable($log_dir)) {
+                throw new RuntimeException("We can't write logs to '$log_dir'");
+            }
+
+            $keep_for_days = $c['app_env'] == 'production' ? 30 : 5;
+
+            $handler = new \Monolog\Handler\RotatingFileHandler("$log_dir/log.txt", $keep_for_days, $log_level);
+            break;
+        case 'graylog':
+            $publisher = new \Gelf\Publisher(new \Gelf\Transport\UdpTransport(getenv('APP_GRAYLOG_HOST'), getenv('APP_GRAYLOG_PORT')));
+            $handler = new \Monolog\Handler\GelfHandler($publisher, $log_level);
+            $formatter = new \Monolog\Formatter\GelfMessageFormatter(null, null, '');
+            break;
+        case 'blackhole':
+            $handler = new \Monolog\Handler\NullHandler($log_level);
+            break;
+        default:
+            throw new RuntimeException("Unknown log handler '$log_handler'");
+    }
+
+    $handler->setFormatter($formatter);
+    $handler->pushProcessor(new \Monolog\Processor\PsrLogMessageProcessor());
+
+    $handler->pushProcessor(function (array $record) use ($app_identifier, $c) {
+        $record['context'] = array_merge($record['context'], [
+            'app' => $app_identifier,
+            'ver' => $c['app_version'],
+            'env' => $c['app_env'],
+            'sapi' => php_sapi_name(),
+        ]);
+
+        return $record;
+    });
+
+    $log->pushHandler($handler);
+
+    return $log;
+};
+
+// ---------------------------------------------------
+//  DB Connection, Pool, Structure, Migrations, Models
+// ---------------------------------------------------
+
+// ---------------------------------------------------
+//  Controllers
+// ---------------------------------------------------
 
 // Controller action result encoder
 $container['result_encoder'] = function() {

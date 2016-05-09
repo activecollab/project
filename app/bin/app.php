@@ -24,10 +24,12 @@ $application = new Application('App', file_get_contents(APP_PATH . '/VERSION'));
 
 $container = new Container();
 $container['settings'] = function () {
-    $settings = include dirname(__DIR__) . '/settings.php';
+    $settings = require dirname(__DIR__) . '/settings.php';
 
     return $settings['settings'];
 };
+
+require_once dirname(__DIR__) . '/config.php';
 require_once dirname(__DIR__) . '/dependencies.php';
 
 (new ClassFinder())->scanDirsForInstances([
