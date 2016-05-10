@@ -72,4 +72,4 @@ $rename_utility->fixNamespaceInDir('app', $project_name);
 $rename_utility->fixNamespaceInDir('test', $project_name);
 
 $filesystem->replaceInFile('phpunit.xml', ['<testsuite name="App">' => '<testsuite name="' . htmlspecialchars($project_name) . '">']);
-$filesystem->renameFile('app/bin/app.php', 'app/bin/' . \Doctrine\Common\Inflector\Inflector::tableize($project_name) . '.php');
+$filesystem->renameFile('app/bin/app.php', str_replace([' ', '_'], ['-', '-'], \Doctrine\Common\Inflector\Inflector::tableize($project_name)) . '.php');
