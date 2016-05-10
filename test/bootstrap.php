@@ -3,7 +3,7 @@
 /*
  * This file is part of the App project.
  *
- * (c) A51 doo <info@activecollab.com>. All rights reserved.
+ * (c) My Company <info@example.com>. All rights reserved.
  */
 
 date_default_timezone_set('UTC');

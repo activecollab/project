@@ -3,13 +3,13 @@
 /*
  * This file is part of the App project.
  *
- * (c) A51 doo <info@activecollab.com>. All rights reserved.
+ * (c) My Company <info@example.com>. All rights reserved.
  */
 
 $header = <<<EOF
 This file is part of the App project.
 
-(c) A51 doo <info@activecollab.com>. All rights reserved.
+(c) My Company <info@example.com>. All rights reserved.
 EOF;
 
 Symfony\CS\Fixer\Contrib\HeaderCommentFixer::setHeader($header);

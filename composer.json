@@ -1,9 +1,7 @@
 {
     "name": "activecollab/project",
     "description": "Bootstrap a simple PHP project.",
-    "keywords": [
-        "app"
-    ],
+    "keywords": ["app"],
     "license": "MIT",
     "type": "project",
     "minimum-stability": "stable",
