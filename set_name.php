@@ -64,12 +64,23 @@ $rename_utility = new class ($filesystem)
  };
 
 $project_name = $rename_utility->getProjectName(__DIR__);
+$short_project_name = str_replace([' ', '_'], ['-', '-'], \Doctrine\Common\Inflector\Inflector::tableize($project_name));
 
 print "Project name is: $project_name\n";
 print "Namespace is ActiveCollab\\$project_name\n";
+
+$filesystem->replaceInFile('composer.json', [
+    '"name": "activecollab/project"' => '"name": "my-company/' . $short_project_name . '"',
+]);
+
+$filesystem->replaceInFile('app/bin/app.php', [
+    '$application = new Application(\'App\'' => '$application = new Application(\'' . $project_name . '\'',
+]);
+
+
 
 $rename_utility->fixNamespaceInDir('app', $project_name);
 $rename_utility->fixNamespaceInDir('test', $project_name);
 
 $filesystem->replaceInFile('phpunit.xml', ['<testsuite name="App">' => '<testsuite name="' . htmlspecialchars($project_name) . '">']);
-$filesystem->renameFile('app/bin/app.php', str_replace([' ', '_'], ['-', '-'], \Doctrine\Common\Inflector\Inflector::tableize($project_name)) . '.php');
+$filesystem->renameFile('app/bin/app.php', $short_project_name . '.php');
