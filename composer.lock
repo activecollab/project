@@ -558,16 +558,16 @@
         },
         {
             "name": "activecollab/filesystem",
-            "version": "0.10.1",
+            "version": "0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/filesystem.git",
-                "reference": "6efdcaaffb3c9e5549d369b5210ec8b356cf7cc6"
+                "reference": "986ab8a6d81c3bd1dab339b0c2ff8447495d094e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/filesystem/zipball/6efdcaaffb3c9e5549d369b5210ec8b356cf7cc6",
-                "reference": "6efdcaaffb3c9e5549d369b5210ec8b356cf7cc6",
+                "url": "https://api.github.com/repos/activecollab/filesystem/zipball/986ab8a6d81c3bd1dab339b0c2ff8447495d094e",
+                "reference": "986ab8a6d81c3bd1dab339b0c2ff8447495d094e",
                 "shasum": ""
             },
             "require": {
@@ -600,7 +600,7 @@
                 "activecollab",
                 "filesystem"
             ],
-            "time": "2016-03-06 16:37:32"
+            "time": "2016-05-10 23:27:20"
         },
         {
             "name": "activecollab/humannameparser",
