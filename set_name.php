@@ -25,14 +25,25 @@ $rename_utility = new class ($filesystem)
         $this->filesystem = $filesystem;
     }
 
-
+    /**
+     * @param  string $path
+     * @return string
+     */
     public function getProjectName($path)
     {
         return ucfirst(basename($path));
     }
 
+    /**
+     * @param string $path
+     * @param string $project_name
+     */
     public function fixNamespaceInDir($path, $project_name)
     {
+        if (empty($project_name)) {
+            throw new RuntimeException('Project name is required');
+        }
+
         foreach ($this->filesystem->subdirs($path) as $subdir) {
             $this->fixNamespaceInDir($subdir, $project_name);
         }
@@ -57,9 +68,8 @@ $project_name = $rename_utility->getProjectName(__DIR__);
 print "Project name is: $project_name\n";
 print "Namespace is ActiveCollab\\$project_name\n";
 
-
-$rename_utility->fixNamespaceInDir('app');
-$rename_utility->fixNamespaceInDir('test');
+$rename_utility->fixNamespaceInDir('app', $project_name);
+$rename_utility->fixNamespaceInDir('test', $project_name);
 
 $filesystem->replaceInFile('phpunit.xml', ['<testsuite name="App">' => '<testsuite name="' . htmlspecialchars($project_name) . '">']);
 $filesystem->renameFile('app/bin/app.php', 'app/bin/' . \Doctrine\Common\Inflector\Inflector::tableize($project_name) . '.php');
