@@ -59,7 +59,7 @@ $rename_utility = new class ($filesystem)
 
 $project_name = $rename_utility->getProjectName(__DIR__);
 
-if (ctype_alnum($project_name)) {
+if (!ctype_alnum($project_name)) {
     print "Project name can be alphanum only\n";
     exit(1);
 }
