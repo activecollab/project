@@ -19,7 +19,7 @@ class InfoController extends Controller
     public function index()
     {
         return [
-            'application' => 'ID',
+            'application' => $this->app_name,
             'version' => $this->app_version,
             'status' => 'current',
             'environment' => $this->app_env,

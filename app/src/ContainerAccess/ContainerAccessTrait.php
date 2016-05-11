@@ -10,6 +10,7 @@ namespace ActiveCollab\App\ContainerAccess;
 
 /**
  * @property string $app_identifier
+ * @property string $app_name
  * @property string $app_version
  * @property string $app_env
  * @property string $app_root
