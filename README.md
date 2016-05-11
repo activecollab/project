@@ -9,7 +9,7 @@ composer create-project activecollab/project Warhorse 0.10.* --repository=https:
 This command will create a project with name Warhorse from a template. Post clone, it does several things:
 
 1. Configures `composer.json` for your project
-1. Adjusts application name and namespace (from `ActiveCollab\App` to `Warhorse`)
+1. Adjusts application name and namespace (from `ActiveCollab\App` to `ActiveCollab\Warhorse`)
 1. Adjusts environment variable names (prefix is changed from `APP_` to `WARHORSE_`)
 
 ## Staring a web server
