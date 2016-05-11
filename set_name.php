@@ -79,9 +79,12 @@ $filesystem->replaceInFile('app/bin/app.php', [
     '$application = new Application(\'App\'' => '$application = new Application(\'' . $project_name . '\'',
 ]);
 
-$filesystem->replaceInFile('config/.env.sample', ['APP_' => $_ENV]);
-$filesystem->replaceInFile('app/config.php', ['APP_' => $_ENV]);
-$filesystem->replaceInFile('app/dependencies.php', ['APP_' => $_ENV]);
+$filesystem->replaceInFile('config/.env.sample', [
+    'APP_' => $env_variable_prefix,
+    'APP_MYSQL_NAME="app"' => 'APP_MYSQL_NAME="' . $underscore_project_name . '"',
+]);
+$filesystem->replaceInFile('app/config.php', ['APP_' => $env_variable_prefix]);
+$filesystem->replaceInFile('app/dependencies.php', ['APP_' => $env_variable_prefix]);
 
 $rename_utility->fixNamespaceInDir('app', $project_name);
 $rename_utility->fixNamespaceInDir('test', $project_name);
