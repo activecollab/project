@@ -3,7 +3,7 @@
 Use Composer to create a new project based on this template:
 
 ```bash
-composer create-project activecollab/project Warhorse 0.10.* --repository=https://github.com/activecollab/project --dev
+composer create-project activecollab/project Warhorse '0.10.*' --repository='{"type":"vcs","url":"https://github.com/activecollab/project"}'
 ```
 
 This command will create a project with name Warhorse from a template. Post clone, it does several things:
