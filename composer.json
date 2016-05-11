@@ -36,6 +36,7 @@
     "scripts": {
         "post-create-project-cmd": [
             "php set_name.php && rm set_name.php",
+            "@composer update",
             "cp './config/.env.sample' './config/.env'",
             "cp './config/.env.sample' './config/.env.development'",
             "cp './app/settings.php.dist' './app/settings.php'",
