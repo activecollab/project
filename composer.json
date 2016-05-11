@@ -25,6 +25,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
+            "rm './README.md' && mv './README.project.md' './README.md'",
             "php set_name.php && rm set_name.php",
             "@composer update",
             "cp './config/.env.sample' './config/.env'",

@@ -99,4 +99,7 @@ print "Prepare CLI tools\n";
 $filesystem->replaceInFile('phpunit.xml', ['<testsuite name="App">' => '<testsuite name="' . htmlspecialchars($project_name) . '">']);
 $filesystem->renameFile('app/bin/app.php', $short_project_name . '.php');
 
+print "Update README file\n";
+$filesystem->replaceInFile('README.md', ['App' => $project_name]);
+
 print "All set, project has been renamed to $project_name\n";
