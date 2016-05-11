@@ -75,8 +75,8 @@ print "Updating composer.json\n";
 $filesystem->replaceInFile('composer.json', [
     '"name": "activecollab/project"' => '"name": "my-company/' . $short_project_name . '"',
     '"keywords": ["app"]' => '"keywords": ["' . $project_name . '"]',
-    '"ActiveCollab\\\\App\\\\": "app/src"' => '"ActiveCollab\\\\' . $project_name . '\\\\": "app/src"',
-    '"ActiveCollab\\\\App\\\\Test\\\\": "test/src"' => '"ActiveCollab\\\\' . $project_name . '\\\\Test\\\\": "test/src"',
+    '"ActiveCollab\\\\App\\\\": "app/src"' => '"' . $project_name . '\\\\": "app/src"',
+    '"ActiveCollab\\\\App\\\\Test\\\\": "test/src"' => '"' . $project_name . '\\\\Test\\\\": "test/src"',
 ]);
 
 $filesystem->replaceInFile('app/bin/app.php', [
