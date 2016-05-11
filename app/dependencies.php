@@ -17,7 +17,7 @@ if (empty($container)) {
 // ---------------------------------------------------
 
 $container['app_identifier'] = function ($c) {
-    return "App v$c[app_version]";
+    return basename($c['app_root']) . " v$c[app_version]";
 };
 
 $container['app_version'] = function ($c) {
