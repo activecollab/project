@@ -20,8 +20,6 @@ use ActiveCollab\ContainerAccess\ContainerAccessInterface;
 use Slim\Container;
 use Symfony\Component\Console\Application;
 
-$application = new Application('App', file_get_contents(APP_PATH . '/VERSION'));
-
 $container = new Container();
 $container['settings'] = function () {
     $settings = require dirname(__DIR__) . '/settings.php';
@@ -31,6 +29,8 @@ $container['settings'] = function () {
 
 require_once dirname(__DIR__) . '/config.php';
 require_once dirname(__DIR__) . '/dependencies.php';
+
+$application = new Application($container['app_name'], $container['app_version']);
 
 (new ClassFinder())->scanDirsForInstances([
     APP_PATH . '/vendor/activecollab/bootstrap/src/command' => '\ActiveCollab\Bootstrap\Command',
