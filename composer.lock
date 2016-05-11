@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7487d422605d6db0b9a6b844b63d2040",
-    "content-hash": "cc8f8330282ad8ff4291e579fded1eed",
+    "hash": "e2a6e96d9426d28ec1a15a2f9f6241ff",
+    "content-hash": "f4e131ade44f523fa0906bb5ddd08abd",
     "packages": [
         {
             "name": "activecollab/authentication",
@@ -59,15 +59,20 @@
         },
         {
             "name": "activecollab/bootstrap",
-            "version": "dev-master",
+            "version": "0.10.1",
             "source": {
                 "type": "git",
-                "url": "/Users/ilija/Projects/Components/Bootstrap",
-                "reference": "4af4e65ec8e8462c4fcf8a10343d5be5e62ca408"
+                "url": "https://github.com/activecollab/bootstrap.git",
+                "reference": "a2d8d829129f4db3b809caacf3af232c0a276c66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/a2d8d829129f4db3b809caacf3af232c0a276c66",
+                "reference": "a2d8d829129f4db3b809caacf3af232c0a276c66",
+                "shasum": ""
             },
             "require": {
                 "activecollab/authentication": "^1.0.0",
-                "activecollab/container": "^1.0.0",
                 "activecollab/controller": "^0.10.0",
                 "activecollab/databasemigrations": "^1.0.0",
                 "activecollab/databasestructure": "^0.10.0",
@@ -94,41 +99,9 @@
                     "ActiveCollab\\Bootstrap\\Test\\": "test/src"
                 }
             },
-            "description": "All packages and code that is needed to glue them together for a typical PHP project",
-            "time": "2016-05-09 08:35:31"
-        },
-        {
-            "name": "activecollab/container",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/activecollab/container.git",
-                "reference": "9e5bb9f990a46f4bd94ca59a53499fa9553800f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/container/zipball/9e5bb9f990a46f4bd94ca59a53499fa9553800f6",
-                "reference": "9e5bb9f990a46f4bd94ca59a53499fa9553800f6",
-                "shasum": ""
-            },
-            "require": {
-                "container-interop/container-interop": "^1.1",
-                "php": ">=5.6.0",
-                "pimple/pimple": "^3.0.0"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "^1.0",
-                "phpunit/phpunit": "^5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ActiveCollab\\Container\\": "src"
-                }
-            },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "Pimple 3 wrapper that implements Container Interop",
-            "time": "2016-05-08 21:04:44"
+            "description": "All packages and code that is needed to glue them together for a typical PHP project",
+            "time": "2016-05-11 07:34:02"
         },
         {
             "name": "activecollab/containeraccess",
@@ -179,11 +152,17 @@
         },
         {
             "name": "activecollab/controller",
-            "version": "0.10.0",
+            "version": "0.10.1",
             "source": {
                 "type": "git",
-                "url": "/Users/ilija/Projects/Components/Controller",
-                "reference": "d0a07c655b458e8d17fa3762acb02941306ea679"
+                "url": "https://github.com/activecollab/controller.git",
+                "reference": "93da1151fe7b3be2f8591547455e5fdf6dfd93b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/activecollab/controller/zipball/93da1151fe7b3be2f8591547455e5fdf6dfd93b6",
+                "reference": "93da1151fe7b3be2f8591547455e5fdf6dfd93b6",
+                "shasum": ""
             },
             "require": {
                 "activecollab/containeraccess": "^1.0.0",
@@ -201,8 +180,15 @@
                     "ActiveCollab\\Controller\\": "src"
                 }
             },
-            "description": "Convenient Slit3 controller and conventions",
-            "time": "2016-05-08 22:38:35"
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Invokeable controller that accepts containers, works with ETag and more",
+            "keywords": [
+                "controller"
+            ],
+            "time": "2016-05-11 07:31:21"
         },
         {
             "name": "activecollab/cookies",
@@ -3153,9 +3139,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "activecollab/bootstrap": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

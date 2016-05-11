@@ -5,19 +5,9 @@
     "license": "MIT",
     "type": "project",
     "minimum-stability": "stable",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "/Users/ilija/Projects/Components/Bootstrap"
-        },
-        {
-            "type": "vcs",
-            "url": "/Users/ilija/Projects/Components/Controller"
-        }
-    ],
     "require": {
         "php": ">=7.0.0",
-        "activecollab/bootstrap": "dev-master"
+        "activecollab/bootstrap": "^0.10.0"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.0",
