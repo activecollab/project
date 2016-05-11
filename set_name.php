@@ -64,7 +64,9 @@ $rename_utility = new class ($filesystem)
  };
 
 $project_name = $rename_utility->getProjectName(__DIR__);
-$short_project_name = str_replace([' ', '_'], ['-', '-'], \Doctrine\Common\Inflector\Inflector::tableize($project_name));
+$underscore_project_name = \Doctrine\Common\Inflector\Inflector::tableize($project_name);
+$short_project_name = str_replace([' ', '_'], ['-', '-'], $underscore_project_name);
+$env_variable_prefix = strtoupper($underscore_project_name) . '_';
 
 print "Project name is: $project_name\n";
 print "Namespace is ActiveCollab\\$project_name\n";
@@ -77,7 +79,9 @@ $filesystem->replaceInFile('app/bin/app.php', [
     '$application = new Application(\'App\'' => '$application = new Application(\'' . $project_name . '\'',
 ]);
 
-
+$filesystem->replaceInFile('config/.env.sample', ['APP_' => $_ENV]);
+$filesystem->replaceInFile('app/config.php', ['APP_' => $_ENV]);
+$filesystem->replaceInFile('app/dependencies.php', ['APP_' => $_ENV]);
 
 $rename_utility->fixNamespaceInDir('app', $project_name);
 $rename_utility->fixNamespaceInDir('test', $project_name);
