@@ -2,6 +2,6 @@
 *.idea
 /app/settings.php
 /config/.env*
-!/config/.env.samle
+!/config/.env.sample
 /log/*.log
 /vendor
