@@ -189,9 +189,19 @@ $container['migrations'] = function ($c) {
 //  Controllers
 // ---------------------------------------------------
 
+// Client side caching
+$container['cache'] = function () {
+    return new \Slim\HttpCache\CacheProvider();
+};
+
+// User identifier (should be an email address of authenticated user)
+$container['user_identifier'] = function () {
+    return new Nobody(); // @TODO
+};
+
 // Controller action result encoder
-$container['result_encoder'] = function () {
-    return new \ActiveCollab\Controller\ResultEncoder\ResultEncoder();
+$container['result_encoder'] = function ($c) {
+    return new \ActiveCollab\Bootstrap\ResultEncoder\ResultEncoder($c['cache'], $c['app_identifier'], $c['user_identifier']);
 };
 
 // Scan app/src/Controller directory for application controllers
