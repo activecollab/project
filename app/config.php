@@ -10,11 +10,14 @@ if (empty($container)) {
     throw new RuntimeException('DI container not found');
 }
 
-$dotenv = new \Dotenv\Dotenv(dirname(__DIR__) . '/config');
+$env = getenv('WAREHOUSE_ENVIRONMENT');
 
-if (empty(getenv('APP_ENVIRONMENT')) || getenv('APP_ENVIRONMENT') == 'development') {
-    $dotenv->load();
+if (empty($env)) {
+    $env = 'development';
 }
+
+$dotenv = new \Dotenv\Dotenv(dirname(__DIR__) . '/config', ".env.{$env}");
+$dotenv->load();
 
 $dotenv->required([
     'APP_LOG_HANDLER',
