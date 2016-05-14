@@ -185,6 +185,13 @@ $container['migrations'] = function ($c) {
     return new \ActiveCollab\DatabaseMigrations\Migrations($c['connection'], $c['migrations_finder'], $c['logger']);
 };
 
+// Scan app/src/Model/Collection directory for model collections
+foreach ((new ClassFinder())->scanDirForClasses($container['app_root'] . '/app/src/Model/Collection', '\ActiveCollab\Warehouse\Model\Collection', true) as $class_path => $class_name) {
+    $container[ltrim($class_name, '\\')] = function ($c) use ($class_name) {
+        return new $class_name($c['connection'], $c['pool']);
+    };
+}
+
 // ---------------------------------------------------
 //  Controllers
 // ---------------------------------------------------
