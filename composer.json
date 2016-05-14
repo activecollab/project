@@ -5,6 +5,12 @@
     "license": "MIT",
     "type": "project",
     "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "/Users/ilija/Projects/Components/Bootstrap"
+        }
+    ],
     "require": {
         "php": ">=7.0.0",
         "activecollab/bootstrap": "^0.10.0",
