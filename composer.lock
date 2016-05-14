@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc367d8c0ff0a2e9dcf698882bac6055",
-    "content-hash": "1c3ed49a0d0150bc565649b05944107a",
+    "hash": "5ac8157395e5a967bc73b5798c3b545a",
+    "content-hash": "528a4d0dd007aeaaee8863c4ae15a12d",
     "packages": [
         {
             "name": "activecollab/authentication",
@@ -59,16 +59,16 @@
         },
         {
             "name": "activecollab/bootstrap",
-            "version": "0.10.8",
+            "version": "0.10.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/bootstrap.git",
-                "reference": "9441be948b7618e3f264c6a5192c63e0c9b92853"
+                "reference": "1bcdb83020ac8b815b8abcf20e09713747018ed7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/9441be948b7618e3f264c6a5192c63e0c9b92853",
-                "reference": "9441be948b7618e3f264c6a5192c63e0c9b92853",
+                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/1bcdb83020ac8b815b8abcf20e09713747018ed7",
+                "reference": "1bcdb83020ac8b815b8abcf20e09713747018ed7",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
                 "bootstrap",
                 "project"
             ],
-            "time": "2016-05-14 20:27:57"
+            "time": "2016-05-14 20:44:14"
         },
         {
             "name": "activecollab/containeraccess",
