@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e2a6e96d9426d28ec1a15a2f9f6241ff",
-    "content-hash": "f4e131ade44f523fa0906bb5ddd08abd",
+    "hash": "397ec00cc3475ea682c1535fbf0c1e59",
+    "content-hash": "85f49a2a40eef6546770de7472a331f4",
     "packages": [
         {
             "name": "activecollab/authentication",
@@ -59,29 +59,22 @@
         },
         {
             "name": "activecollab/bootstrap",
-            "version": "0.10.1",
+            "version": "0.10.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/activecollab/bootstrap.git",
-                "reference": "a2d8d829129f4db3b809caacf3af232c0a276c66"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/a2d8d829129f4db3b809caacf3af232c0a276c66",
-                "reference": "a2d8d829129f4db3b809caacf3af232c0a276c66",
-                "shasum": ""
+                "url": "/Users/ilija/Projects/Components/Bootstrap",
+                "reference": "c5748ce2d6e32abb51efbfc0d349c14947c31d83"
             },
             "require": {
                 "activecollab/authentication": "^1.0.0",
                 "activecollab/controller": "^0.10.0",
                 "activecollab/databasemigrations": "^1.0.0",
                 "activecollab/databasestructure": "^0.10.0",
-                "graylog2/gelf-php": "~1.4.0",
                 "monolog/monolog": "~1.17.0",
                 "php": ">=7.0.0",
                 "slim/http-cache": "~0.3.0",
                 "slim/php-view": "^2.0",
-                "slim/slim": "^3.3.0",
+                "slim/slim": "^3.0",
                 "symfony/console": "^3.0.0",
                 "vlucas/phpdotenv": "^2.2.0"
             },
@@ -90,7 +83,8 @@
                 "phpunit/phpunit": "^5.0"
             },
             "suggest": {
-                "activecollab/jobsqueue": "Queue for background, delayed, parallel or remove jobs"
+                "activecollab/jobsqueue": "Queue for background, delayed, parallel or remove jobs",
+                "graylog2/gelf-php": "Log to Graylog2 using GELF"
             },
             "type": "library",
             "autoload": {
@@ -99,9 +93,15 @@
                     "ActiveCollab\\Bootstrap\\Test\\": "test/src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "description": "All packages and code that is needed to glue them together for a typical PHP project",
-            "time": "2016-05-11 07:34:02"
+            "keywords": [
+                "bootstrap",
+                "project"
+            ],
+            "time": "2016-05-14 17:59:54"
         },
         {
             "name": "activecollab/containeraccess",
@@ -152,16 +152,16 @@
         },
         {
             "name": "activecollab/controller",
-            "version": "0.10.1",
+            "version": "0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/controller.git",
-                "reference": "93da1151fe7b3be2f8591547455e5fdf6dfd93b6"
+                "reference": "8f74a2ffc08f0bd61c5beae9b7684e2616535aec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/controller/zipball/93da1151fe7b3be2f8591547455e5fdf6dfd93b6",
-                "reference": "93da1151fe7b3be2f8591547455e5fdf6dfd93b6",
+                "url": "https://api.github.com/repos/activecollab/controller/zipball/8f74a2ffc08f0bd61c5beae9b7684e2616535aec",
+                "reference": "8f74a2ffc08f0bd61c5beae9b7684e2616535aec",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
             "keywords": [
                 "controller"
             ],
-            "time": "2016-05-11 07:31:21"
+            "time": "2016-05-11 23:32:01"
         },
         {
             "name": "activecollab/cookies",
@@ -398,16 +398,16 @@
         },
         {
             "name": "activecollab/databasestructure",
-            "version": "0.10.0",
+            "version": "0.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/databasestructure.git",
-                "reference": "7de9f9599d6ff9c28793c9c38b3499a0fe7e93fa"
+                "reference": "59bc2370add3575f5c68dca61ada55269db5562c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/databasestructure/zipball/7de9f9599d6ff9c28793c9c38b3499a0fe7e93fa",
-                "reference": "7de9f9599d6ff9c28793c9c38b3499a0fe7e93fa",
+                "url": "https://api.github.com/repos/activecollab/databasestructure/zipball/59bc2370add3575f5c68dca61ada55269db5562c",
+                "reference": "59bc2370add3575f5c68dca61ada55269db5562c",
                 "shasum": ""
             },
             "require": {
@@ -447,7 +447,7 @@
                 "mysql",
                 "persistence"
             ],
-            "time": "2016-05-07 21:49:32"
+            "time": "2016-05-13 00:39:01"
         },
         {
             "name": "activecollab/datevalue",
@@ -2100,20 +2100,23 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b"
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4|~5"
             },
             "type": "library",
             "autoload": {
@@ -2137,7 +2140,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2015-06-21 08:01:12"
+            "time": "2016-05-12 18:03:57"
         },
         {
             "name": "phpunit/php-token-stream",

@@ -20,7 +20,7 @@ $container['app_identifier'] = function ($c) {
     return "$c[app_name] v$c[app_version]";
 };
 
-$container['app_name'] = function($c) {
+$container['app_name'] = function ($c) {
     return basename($c['app_root']);
 };
 
@@ -153,7 +153,7 @@ $container['connection'] = function ($c) {
 };
 
 $container['pool'] = function ($c) {
-    $pool = new \ActiveCollab\DatabaseObject\Pool($c['connection'], $c['log']);
+    $pool = new \ActiveCollab\DatabaseObject\Pool($c['connection'], $c['logger']);
     $pool->setContainer($c);
 
     $types_file = $c['app_root'] . '/app/src/Model/types.php';
