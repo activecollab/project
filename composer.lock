@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "397ec00cc3475ea682c1535fbf0c1e59",
-    "content-hash": "85f49a2a40eef6546770de7472a331f4",
+    "hash": "fc367d8c0ff0a2e9dcf698882bac6055",
+    "content-hash": "1c3ed49a0d0150bc565649b05944107a",
     "packages": [
         {
             "name": "activecollab/authentication",
@@ -59,11 +59,17 @@
         },
         {
             "name": "activecollab/bootstrap",
-            "version": "0.10.7",
+            "version": "0.10.8",
             "source": {
                 "type": "git",
-                "url": "/Users/ilija/Projects/Components/Bootstrap",
-                "reference": "40c7b5f5391901874e6ea2ae50ca1e2d9eedc115"
+                "url": "https://github.com/activecollab/bootstrap.git",
+                "reference": "9441be948b7618e3f264c6a5192c63e0c9b92853"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/9441be948b7618e3f264c6a5192c63e0c9b92853",
+                "reference": "9441be948b7618e3f264c6a5192c63e0c9b92853",
+                "shasum": ""
             },
             "require": {
                 "activecollab/authentication": "^1.0.0",
@@ -93,6 +99,7 @@
                     "ActiveCollab\\Bootstrap\\Test\\": "test/src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -101,7 +108,7 @@
                 "bootstrap",
                 "project"
             ],
-            "time": "2016-05-14 20:02:57"
+            "time": "2016-05-14 20:27:57"
         },
         {
             "name": "activecollab/containeraccess",

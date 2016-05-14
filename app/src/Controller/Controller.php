@@ -9,7 +9,7 @@
 namespace ActiveCollab\App\Controller;
 
 use ActiveCollab\App\ContainerAccess\ContainerAccessTrait;
-use ActiveCollab\Controller\Controller as BaseController;
+use ActiveCollab\Bootstrap\Controller\Controller as BaseController;
 
 /**
  * @package ActiveCollab\App\Controller
