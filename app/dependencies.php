@@ -196,7 +196,7 @@ $container['cache'] = function () {
 
 // User identifier (should be an email address of authenticated user)
 $container['user_identifier'] = function () {
-    return new Nobody(); // @TODO
+    return (new \ActiveCollab\User\UnidentifiedVisitor())->getEmail();
 };
 
 // Controller action result encoder
