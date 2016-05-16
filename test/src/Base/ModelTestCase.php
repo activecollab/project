@@ -14,7 +14,7 @@ use ActiveCollab\Bootstrap\TestCase\ModelTestCase as BaseModelTestCase;
 /**
  * @package ActiveCollab\App\Test\Base
  */
-class ModelTestCase extends BaseModelTestCase
+abstract class ModelTestCase extends BaseModelTestCase
 {
     use TestCaseTrait;
 

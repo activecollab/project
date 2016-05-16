@@ -13,7 +13,7 @@ use ActiveCollab\Bootstrap\TestCase\DatabaseTestCase as BaseDatabaseTestCase;
 /**
  * @package ActiveCollab\App\Test\Base
  */
-class DatabaseTestCase extends BaseDatabaseTestCase
+abstract class DatabaseTestCase extends BaseDatabaseTestCase
 {
     use TestCaseTrait;
 
@@ -22,7 +22,7 @@ class DatabaseTestCase extends BaseDatabaseTestCase
      */
     protected function getAppVersion()
     {
-        $version_file = $this->getAppRoot() . '/VERSION';
+        $version_file = $this->app_root . '/VERSION';
 
         if (is_file($version_file)) {
             $app_version = trim(file_get_contents($version_file));
@@ -34,6 +34,4 @@ class DatabaseTestCase extends BaseDatabaseTestCase
 
         return $app_version;
     }
-
-    
 }
