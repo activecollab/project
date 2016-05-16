@@ -39,8 +39,4 @@ switch (getenv('APP_LOG_HANDLER')) {
         break;
 }
 
-if (getenv('APP_LOG_HANDLER') == 'file') {
-    $dotenv->required(['APP_LOG_DIR']);
-}
-
 $container['dotenv'] = $dotenv;
