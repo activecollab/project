@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ac8157395e5a967bc73b5798c3b545a",
-    "content-hash": "528a4d0dd007aeaaee8863c4ae15a12d",
+    "hash": "8e478dfa87fd2d2b45e8b74d37a78b4b",
+    "content-hash": "a2fceeb7cbc46c0a21b46a9d2461bea0",
     "packages": [
         {
             "name": "activecollab/authentication",
@@ -59,16 +59,16 @@
         },
         {
             "name": "activecollab/bootstrap",
-            "version": "0.10.10",
+            "version": "0.10.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/bootstrap.git",
-                "reference": "1bcdb83020ac8b815b8abcf20e09713747018ed7"
+                "reference": "860b853e123b06058977e346b24b239fc1ce6ebe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/1bcdb83020ac8b815b8abcf20e09713747018ed7",
-                "reference": "1bcdb83020ac8b815b8abcf20e09713747018ed7",
+                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/860b853e123b06058977e346b24b239fc1ce6ebe",
+                "reference": "860b853e123b06058977e346b24b239fc1ce6ebe",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
                 "bootstrap",
                 "project"
             ],
-            "time": "2016-05-14 20:44:14"
+            "time": "2016-05-16 18:36:56"
         },
         {
             "name": "activecollab/containeraccess",
@@ -2200,16 +2200,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.3.2",
+            "version": "5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2c6da3536035617bae3fe3db37283c9e0eb63ab3"
+                "reference": "00dd95ffb48805503817ced06399017df315fe5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2c6da3536035617bae3fe3db37283c9e0eb63ab3",
-                "reference": "2c6da3536035617bae3fe3db37283c9e0eb63ab3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/00dd95ffb48805503817ced06399017df315fe5c",
+                "reference": "00dd95ffb48805503817ced06399017df315fe5c",
                 "shasum": ""
             },
             "require": {
@@ -2271,7 +2271,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-04-12 16:20:08"
+            "time": "2016-05-11 13:28:45"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
