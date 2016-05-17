@@ -25,12 +25,4 @@ abstract class ModelTestCase extends BaseModelTestCase
     {
         return '\\ActiveCollab\\App\\Model';
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function getModelStructure()
-    {
-        return new Structure();
-    }
 }
