@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "397ec00cc3475ea682c1535fbf0c1e59",
-    "content-hash": "85f49a2a40eef6546770de7472a331f4",
+    "hash": "29cda233a3337f04387c1f1a80ad9446",
+    "content-hash": "de622527bc7bd3e788108beea919e2c5",
     "packages": [
         {
             "name": "activecollab/authentication",
@@ -59,11 +59,17 @@
         },
         {
             "name": "activecollab/bootstrap",
-            "version": "0.10.17",
+            "version": "0.10.21",
             "source": {
                 "type": "git",
-                "url": "/Users/ilija/Projects/Components/Bootstrap",
-                "reference": "53b612b8f70b1f2c526571607f93b9019ff0008e"
+                "url": "https://github.com/activecollab/bootstrap.git",
+                "reference": "4ef8675889bc8dbe6e9b31b7fe0262f803be9f19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/activecollab/bootstrap/zipball/4ef8675889bc8dbe6e9b31b7fe0262f803be9f19",
+                "reference": "4ef8675889bc8dbe6e9b31b7fe0262f803be9f19",
+                "shasum": ""
             },
             "require": {
                 "activecollab/authentication": "^1.0.0",
@@ -75,7 +81,7 @@
                 "slim/http-cache": "~0.3.0",
                 "slim/php-view": "^2.0",
                 "slim/slim": "^3.0",
-                "symfony/console": "^3.0.0",
+                "symfony/console": "^3.0",
                 "vlucas/phpdotenv": "^2.2.0"
             },
             "require-dev": {
@@ -93,6 +99,7 @@
                     "ActiveCollab\\Bootstrap\\Test\\": "test/src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -101,7 +108,7 @@
                 "bootstrap",
                 "project"
             ],
-            "time": "2016-05-18 10:24:44"
+            "time": "2016-05-23 19:56:47"
         },
         {
             "name": "activecollab/containeraccess",
@@ -152,21 +159,22 @@
         },
         {
             "name": "activecollab/controller",
-            "version": "0.10.3",
+            "version": "0.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/controller.git",
-                "reference": "c55d57c3f07de51cf71a605d6c6d5b9e78e20b9e"
+                "reference": "6167f1a29577d603bd6952efdefe1afba692f481"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/controller/zipball/c55d57c3f07de51cf71a605d6c6d5b9e78e20b9e",
-                "reference": "c55d57c3f07de51cf71a605d6c6d5b9e78e20b9e",
+                "url": "https://api.github.com/repos/activecollab/controller/zipball/6167f1a29577d603bd6952efdefe1afba692f481",
+                "reference": "6167f1a29577d603bd6952efdefe1afba692f481",
                 "shasum": ""
             },
             "require": {
-                "activecollab/containeraccess": "^1.0.0",
-                "activecollab/etag": "^1.0.0",
+                "activecollab/containeraccess": "^1.0",
+                "activecollab/etag": "^1.0",
+                "activecollab/templateengine": "^1.0",
                 "php": ">=5.6.0",
                 "psr/http-message": "^1.0"
             },
@@ -188,7 +196,7 @@
             "keywords": [
                 "controller"
             ],
-            "time": "2016-05-18 17:19:46"
+            "time": "2016-05-22 12:27:24"
         },
         {
             "name": "activecollab/cookies",
@@ -290,24 +298,24 @@
         },
         {
             "name": "activecollab/databasemigrations",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/databasemigrations.git",
-                "reference": "8a2a6aaa34927cbed1422448cbac1b88504eafff"
+                "reference": "e1ca882191c48aa4d1250cca584f0804cd1350f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/databasemigrations/zipball/8a2a6aaa34927cbed1422448cbac1b88504eafff",
-                "reference": "8a2a6aaa34927cbed1422448cbac1b88504eafff",
+                "url": "https://api.github.com/repos/activecollab/databasemigrations/zipball/e1ca882191c48aa4d1250cca584f0804cd1350f7",
+                "reference": "e1ca882191c48aa4d1250cca584f0804cd1350f7",
                 "shasum": ""
             },
             "require": {
-                "activecollab/databasestructure": "^0.10.0",
-                "activecollab/filesystem": "^0.10.0",
+                "activecollab/databasestructure": "^0.10",
+                "activecollab/filesystem": "^0.10",
                 "doctrine/inflector": "~1.0",
                 "php": ">=5.6.0",
-                "psr/log": "~1.0.0"
+                "psr/log": "^1.0"
             },
             "require-dev": {
                 "fabpot/php-cs-fixer": "^1.0",
@@ -342,7 +350,7 @@
                 "migrations",
                 "mysql"
             ],
-            "time": "2016-05-07 21:59:35"
+            "time": "2016-05-20 17:55:03"
         },
         {
             "name": "activecollab/databaseobject",
@@ -398,23 +406,23 @@
         },
         {
             "name": "activecollab/databasestructure",
-            "version": "0.10.2",
+            "version": "0.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/activecollab/databasestructure.git",
-                "reference": "1316f25e7436f5d09cacc91bf4ec711cfb9c318a"
+                "reference": "8b5a2581a51f6644110cc3b98ef500e578786e2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/activecollab/databasestructure/zipball/1316f25e7436f5d09cacc91bf4ec711cfb9c318a",
-                "reference": "1316f25e7436f5d09cacc91bf4ec711cfb9c318a",
+                "url": "https://api.github.com/repos/activecollab/databasestructure/zipball/8b5a2581a51f6644110cc3b98ef500e578786e2b",
+                "reference": "8b5a2581a51f6644110cc3b98ef500e578786e2b",
                 "shasum": ""
             },
             "require": {
-                "activecollab/databaseconnection": "^2.0.0",
-                "activecollab/databaseobject": "^1.0.7",
-                "activecollab/filesystem": "^0.10.0",
-                "activecollab/user": "^2.0.0",
+                "activecollab/databaseconnection": "^2.0",
+                "activecollab/databaseobject": "^1.0",
+                "activecollab/filesystem": "^0.10",
+                "activecollab/user": "^2.0",
                 "doctrine/inflector": "^1.0",
                 "php": ">=5.6.0"
             },
@@ -447,7 +455,7 @@
                 "mysql",
                 "persistence"
             ],
-            "time": "2016-05-14 19:42:56"
+            "time": "2016-05-20 17:58:20"
         },
         {
             "name": "activecollab/datevalue",
@@ -637,6 +645,45 @@
                 "parse"
             ],
             "time": "2016-05-07 19:39:35"
+        },
+        {
+            "name": "activecollab/templateengine",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/activecollab/templateengine.git",
+                "reference": "a0fb6171a5949500985df574135551a0bce78766"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/activecollab/templateengine/zipball/a0fb6171a5949500985df574135551a0bce78766",
+                "reference": "a0fb6171a5949500985df574135551a0bce78766",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "^1.0",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ActiveCollab\\TemplateEngine\\": "src",
+                    "ActiveCollab\\TemplateEngine\\Test\\": "test/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Component that abstracts template engines and offers easy to use PHP template engine",
+            "keywords": [
+                "template",
+                "view"
+            ],
+            "time": "2016-05-22 11:42:16"
         },
         {
             "name": "activecollab/user",
