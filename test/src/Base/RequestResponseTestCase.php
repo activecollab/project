@@ -9,12 +9,12 @@
 namespace ActiveCollab\App\Test\Base;
 
 use ActiveCollab\App\Test\Base\Traits\TestCaseTrait;
-use ActiveCollab\Bootstrap\TestCase\ModelTestCase as BaseModelTestCase;
+use ActiveCollab\Bootstrap\TestCase\RequestResponseTestCase as BaseRequestResponseTestCase;
 
 /**
  * @package ActiveCollab\App\Test\Base
  */
-abstract class ModelTestCase extends BaseModelTestCase
+abstract class RequestResponseTestCase extends BaseRequestResponseTestCase
 {
     use TestCaseTrait;
 

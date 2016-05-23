@@ -6,7 +6,7 @@
  * (c) My Company <info@example.com>. All rights reserved.
  */
 
-namespace ActiveCollab\App\Test\Base;
+namespace ActiveCollab\App\Test\Base\Traits;
 
 /**
  * @package ActiveCollab\App\Test\Base

@@ -8,6 +8,7 @@
 
 namespace ActiveCollab\App\Test\Base;
 
+use ActiveCollab\App\Test\Base\Traits\TestCaseTrait;
 use ActiveCollab\Bootstrap\TestCase\TestCase as BaseTestCase;
 
 /**
